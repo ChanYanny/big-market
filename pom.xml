@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>top.ibytewave</groupId>
+    <artifactId>big-market</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>big-market-app</module>
+        <module>big-market-domain</module>
+        <module>big-market-infrastructure</module>
+        <module>big-market-trigger</module>
+        <module>big-market-types</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <developers>
+        <developer>
+            <name>ChanYanny</name>
+            <email>2930066235@qq.com</email>
+            <url>http://www.ibytewave.top</url>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.12</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- MyBatis 与 Spring Boot 集成的启动器，用于简化 MyBatis 配置 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.1.4</version>
+            </dependency>
+
+            <!-- MySQL JDBC 驱动，用于连接 MySQL 数据库 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.22</version>
+            </dependency>
+
+            <!-- fastjson：阿里巴巴的 JSON 序列化/反序列化库 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>2.0.28</version>
+            </dependency>
+
+            <!-- Apache Commons Lang：提供 StringUtils、ObjectUtils 等常用工具类 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.9</version>
+            </dependency>
+
+            <!-- Google Guava：集合工具类、缓存、并发工具等扩展类库 -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>32.1.3-jre</version>
+            </dependency>
+
+            <!-- dom4j：XML 解析和生成工具库 -->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>1.6.1</version>
+            </dependency>
+
+            <!-- XStream：对象与 XML 之间的序列化/反序列化 -->
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>1.4.10</version>
+            </dependency>
+
+            <!-- JJWT：基于 Java 的 JWT(JSON Web Token) 生成与解析库 -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.9.1</version>
+            </dependency>
+
+            <!-- java-jwt：Auth0 提供的 JWT 实现，可用于签发和验证 Token -->
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>4.4.0</version>
+            </dependency>
+
+            <!-- Apache Commons Codec：提供 MD5、SHA、Base64 等编码/加密工具 -->
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.15</version>
+            </dependency>
+
+            <!-- 工程模块 domain -->
+            <dependency>
+                <groupId>top.ibytewave</groupId>
+                <artifactId>big-market-domain</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <!-- 工程模块 infrastructure -->
+            <dependency>
+                <groupId>top.ibytewave</groupId>
+                <artifactId>big-market-infrastructure</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <!-- 工程模块 trigger -->
+            <dependency>
+                <groupId>top.ibytewave</groupId>
+                <artifactId>big-market-trigger</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <!-- 工程模块 types -->
+            <dependency>
+                <groupId>top.ibytewave</groupId>
+                <artifactId>big-market-types</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <java_jvm>
+                    -Xms1G -Xmx1G -server
+                    -Xss256K
+                    -Dspring.profiles.active=dev
+                    -XX:+DisableExplicitGC
+                    -XX:+UseG1GC
+                    -XX:LargePageSizeInBytes=128m
+                    -XX:+UseFastAccessorMethods
+                    -XX:+HeapDumpOnOutOfMemoryError
+                    -XX:HeapDumpPath=/export/Logs/big-market-boot
+                    -Xloggc:/export/Logs/big-market-boot/gc-big-market-boot.log
+                    -XX:+PrintGCDetails
+                    -XX:+PrintGCDateStamps
+                </java_jvm>
+                <profileActive>dev</profileActive>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>test</id>
+            <properties>
+                <java_jvm>
+                    -Xms1G -Xmx1G -server
+                    -Xss256K
+                    -Dspring.profiles.active=test
+                    -XX:+DisableExplicitGC
+                    -XX:+UseG1GC
+                    -XX:LargePageSizeInBytes=128m
+                    -XX:+UseFastAccessorMethods
+                    -XX:+HeapDumpOnOutOfMemoryError
+                    -XX:HeapDumpPath=/export/Logs/big-market-boot
+                    -Xloggc:/export/Logs/big-market-boot/gc-big-market-boot.log
+                    -XX:+PrintGCDetails
+                    -XX:+PrintGCDateStamps
+                </java_jvm>
+                <profileActive>test</profileActive>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <java_jvm>
+                    -Xms6G -Xmx6G -server
+                    -Xss256K
+                    -Dspring.profiles.active=release
+                    -XX:+DisableExplicitGC
+                    -XX:+UseG1GC
+                    -XX:LargePageSizeInBytes=128m
+                    -XX:+UseFastAccessorMethods
+                    -XX:+HeapDumpOnOutOfMemoryError
+                    -XX:HeapDumpPath=/export/Logs/big-market-boot
+                    -Xloggc:/export/Logs/big-market-boot/gc-big-market-boot.log
+                    -XX:+PrintGCDetails
+                    -XX:+PrintGCDateStamps
+                </java_jvm>
+                <profileActive>prod</profileActive>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>
