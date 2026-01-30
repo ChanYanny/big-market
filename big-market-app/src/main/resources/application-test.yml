@@ -31,7 +31,7 @@ thread:
 #    type: com.zaxxer.hikari.HikariDataSource
 
 #mybatis:
-#  mybatis-locations: classpath:/mybatis/mybatis/*.xml
+#  mapper-locations: classpath:/mybatis/mapper/*.xml
 #  config-location:  classpath:/mybatis/config/mybatis-config.xml
 
 # 日志
