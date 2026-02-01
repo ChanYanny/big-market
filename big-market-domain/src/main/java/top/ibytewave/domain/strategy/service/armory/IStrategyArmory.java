@@ -2,6 +2,7 @@ package top.ibytewave.domain.strategy.service.armory;
 
 /**
  * @author ChanYanny
+ * @description 策略装配库(兵工厂)，负责初始化策略计算
  * @date 2026/1/30 16:26
  */
 public interface IStrategyArmory {
@@ -16,12 +17,6 @@ public interface IStrategyArmory {
     boolean assembleLotteryStrategy(Long strategyId);
 
 
-    /**
-     * 获取抽奖策略装配的随机结果
-     *
-     * @param strategyId 策略ID
-     * @return 抽奖结果
-     */
-    Integer getRandomAwardId(Long strategyId);
+
 
 }
