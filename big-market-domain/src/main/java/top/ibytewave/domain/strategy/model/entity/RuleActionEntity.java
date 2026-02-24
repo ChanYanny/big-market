@@ -38,7 +38,7 @@ public class RuleActionEntity<T extends RuleActionEntity.RaffleEntity> {
         /**
          * 权重值Key；用于抽奖时可以选择权重抽奖。
          */
-        private String ruleWeightValueKey;
+        private String ruleWeightValueKey; // 4000:102,103,104,105
 
         /**
          * 奖品ID；
