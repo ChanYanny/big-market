@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import top.ibytewave.domain.strategy.model.entity.StrategyAwardEntity;
 import top.ibytewave.domain.strategy.model.entity.StrategyEntity;
 import top.ibytewave.domain.strategy.model.entity.StrategyRuleEntity;
+import top.ibytewave.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import top.ibytewave.domain.strategy.repository.IStrategyRepository;
 import top.ibytewave.infrastructure.persistent.dao.IStrategyAwardDao;
 import top.ibytewave.infrastructure.persistent.dao.IStrategyDao;
@@ -135,6 +136,15 @@ public class StrategyRepository implements IStrategyRepository {
         strategyRule.setAwardId(awardId);
         strategyRule.setRuleModel(ruleModel);
         return strategyRuleDao.queryStrategyRuleValue(strategyRule);
+    }
+
+    @Override
+    public StrategyAwardRuleModelVO queryStrategyAwardRuleModelVO(Long strategyId, Integer awardId) {
+        StrategyAward strategyAward = new StrategyAward();
+        strategyAward.setStrategyId(strategyId);
+        strategyAward.setAwardId(awardId);
+        String ruleModels = strategyAwardDao.queryStrategyAwardRuleModels(strategyAward);
+        return StrategyAwardRuleModelVO.builder().ruleModels(ruleModels).build();
     }
 
 
