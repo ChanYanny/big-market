@@ -45,6 +45,7 @@ public class RuleBackListLogicFilter implements ILogicFilter<RuleActionEntity.Ra
                         .ruleModel(DefaultLogicFactory.LogicModel.RULE_BLACKLIST.getCode())
                         .data(RuleActionEntity.RaffleBeforeEntity.builder()
                                 .strategyId(ruleMatterEntity.getStrategyId())
+                                // 黑名单规则是没有 ruleWeightValueKey 的
                                 .awardId(awardId)
                                 .build())
                         .code(RuleLogicCheckTypeVO.TAKE_OVER.getCode())
