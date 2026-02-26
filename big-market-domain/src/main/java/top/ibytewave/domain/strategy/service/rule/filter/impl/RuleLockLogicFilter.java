@@ -1,4 +1,4 @@
-package top.ibytewave.domain.strategy.service.rule.impl;
+package top.ibytewave.domain.strategy.service.rule.filter.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -7,8 +7,8 @@ import top.ibytewave.domain.strategy.model.entity.RuleMatterEntity;
 import top.ibytewave.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import top.ibytewave.domain.strategy.repository.IStrategyRepository;
 import top.ibytewave.domain.strategy.service.annotation.LogicStrategy;
-import top.ibytewave.domain.strategy.service.rule.ILogicFilter;
-import top.ibytewave.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import top.ibytewave.domain.strategy.service.rule.filter.ILogicFilter;
+import top.ibytewave.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 
 import javax.annotation.Resource;
 

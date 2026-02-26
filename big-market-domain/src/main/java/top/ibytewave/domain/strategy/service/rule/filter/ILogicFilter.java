@@ -1,4 +1,4 @@
-package top.ibytewave.domain.strategy.service.rule;
+package top.ibytewave.domain.strategy.service.rule.filter;
 
 import top.ibytewave.domain.strategy.model.entity.RuleActionEntity;
 import top.ibytewave.domain.strategy.model.entity.RuleMatterEntity;

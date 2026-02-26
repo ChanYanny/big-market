@@ -8,9 +8,11 @@ import top.ibytewave.domain.strategy.model.entity.RuleActionEntity;
 import top.ibytewave.domain.strategy.model.entity.RuleMatterEntity;
 import top.ibytewave.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import top.ibytewave.domain.strategy.repository.IStrategyRepository;
+import top.ibytewave.domain.strategy.service.AbstractRaffleStrategy;
 import top.ibytewave.domain.strategy.service.armory.IStrategyDispatch;
-import top.ibytewave.domain.strategy.service.rule.ILogicFilter;
-import top.ibytewave.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import top.ibytewave.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import top.ibytewave.domain.strategy.service.rule.filter.ILogicFilter;
+import top.ibytewave.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
@@ -30,9 +32,10 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
     @Resource
     private DefaultLogicFactory logicFactory;
 
-    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch) {
-        super(repository, strategyDispatch);
+    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory defaultChainFactory) {
+        super(repository, strategyDispatch, defaultChainFactory);
     }
+
 
     @Override
     protected RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> doCheckRaffleBeforeLogic(RaffleFactorEntity raffleFactorEntity, String... logics) {

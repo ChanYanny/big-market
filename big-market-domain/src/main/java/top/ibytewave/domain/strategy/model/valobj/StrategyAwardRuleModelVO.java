@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import top.ibytewave.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import top.ibytewave.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import top.ibytewave.types.common.Constants;
 
 import java.util.ArrayList;
