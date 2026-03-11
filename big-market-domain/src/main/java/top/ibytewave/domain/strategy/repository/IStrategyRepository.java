@@ -3,6 +3,7 @@ package top.ibytewave.domain.strategy.repository;
 import top.ibytewave.domain.strategy.model.entity.StrategyAwardEntity;
 import top.ibytewave.domain.strategy.model.entity.StrategyEntity;
 import top.ibytewave.domain.strategy.model.entity.StrategyRuleEntity;
+import top.ibytewave.domain.strategy.model.valobj.RuleTreeVO;
 import top.ibytewave.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 
 import java.util.List;
@@ -32,5 +33,7 @@ public interface IStrategyRepository {
     String queryStrategyRuleValue(Long strategyId, String ruleModel);
 
     StrategyAwardRuleModelVO queryStrategyAwardRuleModelVO(Long strategyId, Integer awardId);
+
+    RuleTreeVO queryRuleTreeVOByTreeId(String treeId);
 }
 
