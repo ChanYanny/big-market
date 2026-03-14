@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import top.ibytewave.domain.strategy.model.valobj.RuleTreeVO;
 import top.ibytewave.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
+import top.ibytewave.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 import top.ibytewave.domain.strategy.repository.IStrategyRepository;
 import top.ibytewave.domain.strategy.service.AbstractRaffleStrategy;
 import top.ibytewave.domain.strategy.service.armory.IStrategyDispatch;
@@ -66,7 +67,27 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
     }
 
 
+    /**
+     * 获取奖品库存消耗队列
+     *
+     * @return 奖品库存Key信息
+     * @throws InterruptedException 异常
+     */
+    @Override
+    public StrategyAwardStockKeyVO takeQueueValue() throws InterruptedException {
+        return repository.takeQueueValue();
+    }
 
+    /**
+     * 更新奖品库存消耗记录
+     *
+     * @param strategyId 策略ID
+     * @param awardId    奖品ID
+     */
+    @Override
+    public void updateStrategyAwardStock(Long strategyId, Integer awardId) {
+        repository.updateStrategyAwardStock(strategyId, awardId);
+    }
 }
 
 
