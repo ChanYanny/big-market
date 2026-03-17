@@ -20,6 +20,10 @@ public class UpdateAwardStockJob {
     @Resource
     private IRaffleStock raffleStock;
 
+    public UpdateAwardStockJob() {
+        System.out.println(">>> UpdateAwardStockJob 已被 Spring 加载并初始化");
+    }
+
     @Scheduled(cron = "0/5 * * * * ?")
     public void exec() {
         try {

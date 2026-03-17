@@ -63,7 +63,7 @@ public class StrategyArmoryDispatchTest {
 
     @Test
     public void test() {
-        List<StrategyAwardEntity> list = redisService.getValue(Constants.RedisKey.STRATEGY_AWARD_KEY + 100001L);
+        List<StrategyAwardEntity> list = redisService.getValue(Constants.RedisKey.STRATEGY_AWARD_LIST_KEY + 100001L);
         int size = redisService.getValue(Constants.RedisKey.STRATEGY_RATE_RANGE_KEY + 100001L);
         RMap<Integer, Integer> map = redisService.getMap(Constants.RedisKey.STRATEGY_RATE_TABLE_KEY + 100001L);
         log.info("list={}, size={}, map={}", list, size, JSON.toJSONString(map));
